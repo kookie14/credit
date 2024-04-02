@@ -1,0 +1,3 @@
+_target_: src.data.AERDataset
+data_path: ${paths.data_dir}/AER/AER_credit_card_data.csv
+class_column_name: class

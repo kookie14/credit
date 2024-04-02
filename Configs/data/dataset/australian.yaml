@@ -1,0 +1,3 @@
+_target_: src.data.AustralianDataset
+data_path: ${paths.data_dir}/australian/australian.dat
+class_column_name: class

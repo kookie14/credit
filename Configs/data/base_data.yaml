@@ -1,0 +1,7 @@
+_target_: src.data.CreditDataModule
+defaults:
+  - dataset: australian
+  - _self_
+seed: 42
+test_size: 0.25
+class_column_name: class
