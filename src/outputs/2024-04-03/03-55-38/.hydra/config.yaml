@@ -1,0 +1,22 @@
+paths:
+  root_dir: ${oc.env:/home/cuctt/credit/}
+  data_dir: ${paths.root_dir}/data/
+  log_dir: ${paths.root_dir}/logs/
+  output_dir: ${hydra:runtime.output_dir}
+  work_dir: ${hydra:runtime.cwd}
+model:
+  _target_: src.models.BaseModel
+  net:
+    _target_: sklearn.linear_model.LogisticRegression
+    penalty: l2
+    tol: 1.0e-05
+    max_iter: 10000
+data:
+  dataset:
+    _target_: src.data.AustralianDataset
+    data_path: ${paths.data_dir}/australian/australian.dat
+    class_column_name: class
+  _target_: src.data.CreditDataModule
+  seed: 42
+  test_size: 0.25
+  class_column_name: class
